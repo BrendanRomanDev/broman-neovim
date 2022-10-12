@@ -93,7 +93,8 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
   }
-
+  use "p00f/nvim-ts-rainbow" -- rainbow brackets
+  
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
 
@@ -101,7 +102,13 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+  
 
+  -- LazyGit
+  use "kdheepak/lazygit.nvim"
+
+
+  use ""
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
