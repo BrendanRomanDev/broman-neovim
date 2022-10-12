@@ -1,4 +1,4 @@
-# My Neovim configuraiton, based on https://github.com/LunarVim/nvim-basic-ide 
+My Neovim configuraiton, based on https://github.com/LunarVim/nvim-basic-ide 
 
 ## Install Neovim 0.8
 
