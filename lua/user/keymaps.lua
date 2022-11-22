@@ -31,10 +31,10 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- delete a word backwards
-keymap("n", 'dw', 'vb"_d')
+keymap("n", "dw", 'vb"_d')
 
 -- Select All
-keymap('n', '<C-a>', 'gg<S-v>G')
+keymap("n", "<C-a>", "gg<S-v>G")
 
 -- Visual Block --
 -- Move text up and down
@@ -84,6 +84,8 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+-- git-blame
+keymap("n", "<leader>gb", "<cmd>:GitBlameToggle<CR>")
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
