@@ -76,6 +76,7 @@ return packer.startup(function(use)
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" }) -- a bunch of snippets to use
+	use({ "mattn/emmet-vim" })
 
 	-- LSP
 	-- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
@@ -95,12 +96,10 @@ return packer.startup(function(use)
 	})
 	use("p00f/nvim-ts-rainbow") -- rainbow brackets
 
-	-- Nvim Surround, Allows changing of surrounding brackets, divs, etc.
-	use("kylechui/nvim-surround")
-
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" })
 	use({ "f-person/git-blame.nvim", commit = "d3afb1c57918720548effb42edec530232436378" })
+
 	-- DAP
 	use({ "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" })
 	use({ "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" })
@@ -108,6 +107,11 @@ return packer.startup(function(use)
 
 	-- LazyGit
 	use("kdheepak/lazygit.nvim")
+
+	-- Multiselect like VsCode's Ctrl+H
+	use({ "otavioschwanck/cool-substitute.nvim" })
+	-- Nvim Surround, Allows changing of surrounding brackets, divs, etc.
+	use("kylechui/nvim-surround")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

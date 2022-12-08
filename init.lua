@@ -23,8 +23,15 @@ require("user.dap")
 require("user.lazygit")
 require("user.git-blame")
 require("user.nvim-surround")
+require("user.cool-substitute")
 
 -- git blame starts un-toggled
 -- there's probably a better way to do this but I'm currently a scrub
 -- hotkey to toggle <leader>gb, configured in user/keymaps.lua
 vim.g.gitblame_enabled = 0
+
+vim.cmd([[
+ let g:user_emmet_leader_key=','
+ let g:user_emmet_install_global = 0
+ autocmd FileType html,css,javasript.jsx,typescriptreact EmmetInstall
+]])

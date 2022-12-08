@@ -10,6 +10,12 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
+vim.cmd([[
+ let g:user_emmet_leader_key=','
+ let g:user_emmet_install_global = 0
+ autocmd FileType html,css,javasript.jsx,typescriptreact EmmetInstall
+]])
+
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
