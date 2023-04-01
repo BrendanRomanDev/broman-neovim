@@ -1,7 +1,8 @@
 local servers = {
 	"sumneko_lua",
-	"dockerls",
 	"cssls",
+	"dockerls",
+	"graphql",
 	"html",
 	"tsserver",
 	"pyright",
