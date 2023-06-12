@@ -101,13 +101,16 @@ return packer.startup(function(use)
 	use({ "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" })
 	use({ "f-person/git-blame.nvim", commit = "d3afb1c57918720548effb42edec530232436378" })
 
+	-- LazyGit
+	use("kdheepak/lazygit.nvim")
+
 	-- DAP
 	use({ "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" })
 	use({ "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" })
 	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
 
-	-- LazyGit
-	use("kdheepak/lazygit.nvim")
+	-- Live Server
+	use({ "barrett-ruth/live-server.nvim" })
 
 	-- Multiselect like VsCode's Ctrl+H
 	use({ "otavioschwanck/cool-substitute.nvim" })
