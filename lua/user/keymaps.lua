@@ -72,6 +72,7 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Plugins --
+keymap("n", "<leader>.", "<Plug>ColorConvertRgb", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -101,3 +102,8 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+-- Color Converter
+keymap("n", "<leader>rgb", "<Plug>ColorConvertRGB", opts)
+keymap("n", "<leader>hsl", "<Plug>ColorConvertHSL", opts)
+keymap("n", "<leader>hex", "<Plug>ColorConvertHEX", opts)
