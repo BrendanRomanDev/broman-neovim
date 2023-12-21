@@ -1,35 +1,60 @@
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
-  return
+	return
 end
 
-local dashboard = require "alpha.themes.dashboard"
+local dashboard = require("alpha.themes.dashboard")
+
+local section = dashboard.section
+local opts = dashboard.config
+
 dashboard.section.header.val = {
-  [[                               __                ]],
-  [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-  [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-  [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-  [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-  [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+	[[ ______                                  ______              ]],
+	[[(____  \                                (______)             ]],
+	[[ ____)  ) ____ ___  ____  _____ ____     _     _ _____ _   _ ]],
+	[[|  __  ( / ___) _ \|    \(____ |  _ \   | |   | | ___ | | | |]],
+	[[| |__)  ) |  | |_| | | | / ___ | | | |  | |__/ /| ____|\ V / ]],
+	[[|______/|_|   \___/|_|_|_\_____|_| |_|  |_____/ |_____) \_/  ]],
+	[[                                                              ]],
 }
-dashboard.section.buttons.val = {
-  dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-  dashboard.button("e", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-  dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
-  dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-  dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
-  dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-  dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+
+section.buttons.val = {
+	dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+	dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+	dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+	dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
+	dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
+	dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 }
-local function footer()
-  return "Broman"
+
+section.buttons.opts = { spacing = 0 }
+
+for i, btn in ipairs(section.buttons.val) do
+	btn.opts.hl_shortcut = "Special"
 end
 
-dashboard.section.footer.val = footer()
+opts = {
+	layout = {
+		{ type = "padding", val = 2 },
+		section.header,
+		{ type = "padding", val = 2 },
+		section.buttons,
+		{ type = "padding", val = 2 },
+		section.footer,
+	},
+	opts = {
+		margin = 5,
+		noautocmd = true,
+	},
+}
 
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
+local function footer()
+	return "See the opportunity, not the inconvenience"
+end
 
-dashboard.opts.opts.noautocmd = true
-alpha.setup(dashboard.opts)
+section.footer.val = footer()
+
+section.header.opts.hl = "Constant"
+section.footer.opts.hl = "Constant"
+
+alpha.setup(opts)
