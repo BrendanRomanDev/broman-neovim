@@ -1,7 +1,6 @@
 -- local colorscheme = "sonokai"
 -- local colorscheme = "base16-nord"
 
--- setup for solarized-osaka
 require("solarized-osaka").setup({
 	-- your configuration comes here
 	-- or leave it empty to use the default settings
@@ -42,7 +41,9 @@ require("solarized-osaka").setup({
 		hl.TelescopeBorder = { bg = c.transparent }
 	end,
 })
-local colorscheme = "solarized-osaka"
+
+local colorscheme = "solarized-osaka-storm"
+
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
 	return
